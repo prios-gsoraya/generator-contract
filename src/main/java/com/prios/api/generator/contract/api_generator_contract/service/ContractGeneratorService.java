@@ -1,32 +1,9 @@
 package com.prios.api.generator.contract.api_generator_contract.service;
 
 import org.springframework.stereotype.Service;
-import org.thymeleaf.TemplateEngine;
 
 @Service
 public class ContractGeneratorService {
-
-    private final TemplateEngine templateEngine;
-
-    public ContractGeneratorService(TemplateEngine templateEngine) {
-        this.templateEngine = templateEngine;
-    }
-
-    /*public String generateYamlContract(String entityName, String description, boolean embedded) {
-        // Créer le contexte Thymeleaf
-        Context context = new Context();
-        context.setVariable("entityName", entityName);
-        context.setVariable("description", description);
-
-        String embeddedProperty = embedded
-                ? "          $ref: '#/components/schemas/" + entityName + "Id'"
-                : "          type: integer\n          description: \"Identifiant\"";
-
-        context.setVariable("embeddedProperty", embeddedProperty);
-
-        // Utiliser Thymeleaf pour générer le fichier YAML
-        return templateEngine.process("contract.yaml", context);
-    }*/
 
     public String generateYamlContract(String entityName, String description) {
         // Modèle de base avec des placeholders pour les valeurs dynamiques
@@ -152,7 +129,6 @@ public class ContractGeneratorService {
                 """;
 
 
-        // Remplacer les placeholders par les valeurs dynamiques
         return template
                 .replace("__entityName__", entityName)
                 .replace("__description__", description);

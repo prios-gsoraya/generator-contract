@@ -28,10 +28,8 @@ public class ContractGeneratorController {
             Model model) {
 
         try {
-            // Générer le contrat YAML
             String yamlContract = contractGeneratorService.generateYamlContract(entityName, description);
 
-            // Ajouter les données au modèle pour les afficher dans la page de succès
             model.addAttribute("entityName", entityName);
             model.addAttribute("yamlContract", yamlContract);
 

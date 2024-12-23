@@ -9,7 +9,6 @@
 <div class="container mt-5">
     <h1>Générer un contrat Swagger</h1>
 
-    <!-- Formulaire avec un style Bootstrap -->
     <form th:action="@{/generateContract}" method="POST" class="form-group">
         <div class="mb-3">
             <label for="entityName" class="form-label">Nom de l'entité :</label>
@@ -23,11 +22,9 @@
                    placeholder="Entrez une description"/>
         </div>
 
-        <!-- Bouton de soumission -->
         <button type="submit" class="btn btn-primary">Générer</button>
     </form>
 
-    <!-- Affichage des erreurs si présentes -->
     <div th:if="${error}">
         <div class="alert alert-danger mt-3" role="alert">
             <p th:text="${error}"></p>
@@ -35,7 +32,6 @@
     </div>
 </div>
 
-<!-- Ajouter les scripts Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
