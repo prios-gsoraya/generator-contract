@@ -119,7 +119,7 @@ public class ContractGeneratorService {
                             - id
                           properties:
                             id:
-                                $ref: '#/components/schemas/__entityName__Id"
+                                $ref: '#/components/schemas/__entityName__Id'
                         __entityName__Id:
                           type: object
                           properties:
