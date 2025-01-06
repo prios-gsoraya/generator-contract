@@ -21,7 +21,7 @@ public class ContractGeneratorService {
                         get:
                           tags:
                             - __entityName__
-                          operationId: getAll
+                          operationId: getAll__entityName__
                           summary: "Obtenir les __description__ par société"
                           description: "Récupère une liste de __description__ associée à une société spécifique."
                           parameters:
@@ -44,7 +44,7 @@ public class ContractGeneratorService {
                         post:
                           tags:
                             - __entityName__
-                          operationId: postAll
+                          operationId: postAll__entityName__
                           summary: "Créer des __description__"
                           description: "Ajoute une liste de __description__"
                           requestBody:
@@ -70,7 +70,7 @@ public class ContractGeneratorService {
                         put:
                           tags:
                             - __entityName__
-                          operationId: putAll
+                          operationId: putAll__entityName__
                           summary: "Mettre à jour la liste des __description__"
                           description: "Met à jour une liste de __description__ existante."
                           requestBody:
@@ -96,7 +96,7 @@ public class ContractGeneratorService {
                         delete:
                           tags:
                             - __entityName__
-                          operationId: deleteAll
+                          operationId: deleteAll__entityName__
                           summary: "Supprimer la liste des __description__"
                           description: "Supprime une liste de __description__."
                           responses:
