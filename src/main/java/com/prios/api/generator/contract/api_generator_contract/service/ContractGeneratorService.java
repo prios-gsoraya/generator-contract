@@ -161,8 +161,15 @@ public class ContractGeneratorService {
 
         return template
                 .replace("__entityName__", entityName)
-                .replace("__entityNameLower__", entityName.toLowerCase())
+                .replace("__entityNameLower__", toLowerCaseFirstChar(entityName))
                 .replace("__description__", description);
+    }
+
+    private static String toLowerCaseFirstChar(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return str.substring(0, 1).toLowerCase() + str.substring(1);
     }
 
 }
