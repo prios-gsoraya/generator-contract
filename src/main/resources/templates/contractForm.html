@@ -30,6 +30,14 @@
             <p th:text="${error}"></p>
         </div>
     </div>
+
+    <div th:if="${downloadLink}">
+        <div class="alert alert-success mt-3" role="alert">
+            Le fichier a été généré avec succès ! Vous pouvez le télécharger ici :
+            <a th:href="${downloadLink}" class="btn btn-link">Télécharger le fichier YAML</a>
+        </div>
+    </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
