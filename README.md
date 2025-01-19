@@ -1,32 +1,48 @@
-# generator-contract
-The following was discovered as part of building this project:
+# 📄 Générateur de Contrats Swagger
 
-* The original package name 'com.prios.api.generator.contract.api-generator-contract' is invalid and this project uses 'com.prios.api.generator.contract.api_generator_contract' instead.
+Bienvenue dans le projet **Générateur de Contrats Swagger** ! Ce projet vous permet de générer des contrats Swagger en
+format YAML pour vos entités via un formulaire simple sur une interface web. Le fichier YAML généré est organisé dans
+des sous-dossiers basés sur le nom de l'entité.
 
-# Getting Started
+---
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## 🚀 Fonctionnalités
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.1/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.1/maven-plugin/build-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.1/reference/data/sql.html#data.sql.jpa-and-spring-data)
-* [Thymeleaf](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html#web.servlet.spring-mvc.template-engines)
+- **Génération de contrats Swagger** au format YAML pour vos entités.
+- **Formulaire web** interactif permettant de spécifier le nom de l'entité et une description.
+- **Téléchargement automatique** du fichier YAML généré.
+- **Organisation des fichiers** dans des sous-dossiers basés sur le nom de l'entité (ex: `carrier/bom/link`).
+- **Interface utilisateur claire** avec des messages de succès ou d'erreur.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+---
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
+## 🛠️ Technologies Utilisées
 
-### Maven Parent overrides
+Le projet utilise les technologies suivantes pour créer l'application :
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+- **Spring Boot** : Framework backend utilisé pour la création de l'application.
+- **Thymeleaf** : Moteur de template pour générer le contenu HTML dynamique.
+- **Bootstrap 5** : Framework CSS pour rendre l'interface utilisateur moderne et réactive.
+- **Java 23** : Langage utilisé pour la logique métier et le backend.
+- **Maven** : Gestionnaire de dépendances utilisé pour compiler et exécuter le projet.
+
+---
+
+## 📦 Prérequis
+
+Avant de commencer, vous devez vous assurer d'avoir les outils suivants installés sur votre machine :
+
+- **Java 23 ou version supérieure** (ou version compatible avec Spring Boot).
+- **Maven** (ou un autre gestionnaire de dépendances compatible).
+- **IDE** comme IntelliJ IDEA ou Eclipse pour gérer le code.
+
+---
+
+## ⚙️ Configuration
+
+- Dans le fichier src/main/resources/application.properties,
+  vous devez spécifier le répertoire où les fichiers YAML générés
+  seront enregistrés. Ajoutez la ligne suivante dans ce fichier pour configurer le répertoire de base :
+- **base.directory=/chemin/vers/votre/dossier**
+
+
