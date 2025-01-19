@@ -2,6 +2,7 @@ package com.prios.api.generator.contract.api_generator_contract.controller;
 
 import com.prios.api.generator.contract.api_generator_contract.exception.ApiException;
 import com.prios.api.generator.contract.api_generator_contract.service.ContractGeneratorService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +24,9 @@ import java.nio.file.Paths;
 public class ContractGeneratorController {
 
     private final ContractGeneratorService contractGeneratorService;
-    private static final String BASE_DIRECTORY = "C:\\Developpement\\contract_swagger";
+
+    @Value("${base.directory}")
+    private String baseDirectory;
 
     public ContractGeneratorController(ContractGeneratorService contractGeneratorService) {
         this.contractGeneratorService = contractGeneratorService;
@@ -48,7 +51,7 @@ public class ContractGeneratorController {
 
             // Construction du chemin du fichier
             String subDirectoryPath = snakeCaseName.replace("_", "/");
-            Path folderPath = Paths.get(BASE_DIRECTORY, subDirectoryPath);
+            Path folderPath = Paths.get(baseDirectory, subDirectoryPath);
             Files.createDirectories(folderPath);
 
             String fileName = snakeCaseName + ".yaml";
