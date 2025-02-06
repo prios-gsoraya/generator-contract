@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: api-generator-contract
+
+base:
+  directory: C:\\Developpement\\contract_swagger
