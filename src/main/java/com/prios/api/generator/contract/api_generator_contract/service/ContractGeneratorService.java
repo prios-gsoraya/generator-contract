@@ -31,6 +31,12 @@ public class ContractGeneratorService {
                           schema:
                             type: integer
                           description: "Identifiant de la société"
+                        - in: header
+                          name: idEstablishment
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de l'établissement"
                       responses:
                         '200':
                           description: "Liste des __description__s récupéré(e)s avec succès"
@@ -47,6 +53,19 @@ public class ContractGeneratorService {
                       operationId: postAll__entityName__
                       summary: "Créer des __description__s"
                       description: "Ajoute une liste de __description__s"
+                      parameters:
+                        - in: header
+                          name: idCompany
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de la société"
+                        - in: header
+                          name: idEstablishment
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de l'établissement"
                       requestBody:
                         required: true
                         content:
@@ -73,6 +92,19 @@ public class ContractGeneratorService {
                       operationId: putAll__entityName__
                       summary: "Mettre à jour la liste des __description__s"
                       description: "Met à jour une liste des __description__s existant(e)s."
+                      parameters:
+                        - in: header
+                          name: idCompany
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de la société"
+                        - in: header
+                          name: idEstablishment
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de l'établissement"
                       requestBody:
                         required: true
                         content:
@@ -99,6 +131,19 @@ public class ContractGeneratorService {
                       operationId: deleteAll__entityName__
                       summary: "Supprimer la liste des __description__s"
                       description: "Supprime une liste des __description__s."
+                      parameters:
+                        - in: header
+                          name: idCompany
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de la société"
+                        - in: header
+                          name: idEstablishment
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de l'établissement"
                       responses:
                         '204':
                           description: "Liste des __description__s supprimé(e)s avec succès"
@@ -125,6 +170,12 @@ public class ContractGeneratorService {
                           schema:
                             type: integer
                           description: "Identifiant de la société"
+                        - in: header
+                          name: idEstablishment
+                          required: false
+                          schema:
+                            type: integer
+                          description: "Identifiant de l'établissement"
                         - in: path
                           name: id
                           required: true
