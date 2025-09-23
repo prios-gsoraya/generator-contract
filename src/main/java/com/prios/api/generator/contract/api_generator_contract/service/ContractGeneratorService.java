@@ -37,11 +37,25 @@ public class ContractGeneratorService {
                           schema:
                             type: integer
                           description: "Identifiant de l'établissement"
+                        - in: query
+                          name: criteriaParam
+                          description: "Paramètres dynamiques sous forme de clé=valeur"
+                          required: false
+                          style: form
+                          explode: true
+                          schema:
+                            type: object
+                            additionalProperties: true
                       responses:
                         '200':
                           description: "Liste des __description__s récupéré(e)s avec succès"
                           content:
                             application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
+                            application/xml:
                               schema:
                                 type: array
                                 items:
@@ -74,11 +88,21 @@ public class ContractGeneratorService {
                               type: array
                               items:
                                 $ref: '#/components/schemas/__entityName__'
+                          application/xml:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
                       responses:
                         '201':
                           description: "Liste des __description__s créé(e)s avec succès"
                           content:
                             application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
+                            application/xml:
                               schema:
                                 type: array
                                 items:
@@ -113,11 +137,21 @@ public class ContractGeneratorService {
                               type: array
                               items:
                                 $ref: '#/components/schemas/__entityName__'
+                          application/xml:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
                       responses:
                         '202':
                           description: "Liste des __description__s mis(es) à jour avec succès"
                           content:
                             application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
+                            application/xml:
                               schema:
                                 type: array
                                 items:
@@ -149,6 +183,11 @@ public class ContractGeneratorService {
                           description: "Liste des __description__s supprimé(e)s avec succès"
                           content:
                             application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/__entityName__'
+                            application/xml:
                               schema:
                                 type: array
                                 items:
@@ -187,6 +226,9 @@ public class ContractGeneratorService {
                           description: "__description__ récupéré(e) avec succès"
                           content:
                             application/json:
+                              schema:
+                                $ref: '#/components/schemas/__entityName__'
+                            application/xml:
                               schema:
                                 $ref: '#/components/schemas/__entityName__'
                         '404':
